@@ -392,7 +392,7 @@ function updateTitle(d) {
 		};
 		html+='<span class="glyphicon glyphicon-zoom-in"/></a>';
 	}
-	html+='<span class="glyphicon glyphicon-fullscreen" style="position:absolute;right:10px;margin-top:10px;cursor:pointer" onclick="togglefullscreen()"/>';
+	html+='<span class="glyphicon glyphicon-fullscreen" style="position:absolute;right:10px;margin-top:10px;cursor:pointer" onclick="RDFViz.togglefullscreen()"/>';
 	html+='</h3>';
 	detailBox.html(html);
 }
@@ -799,4 +799,4 @@ function dblclick(d) {
 	}
 }
 
-export {initGraph, togglefullscreen};
+export {initGraph, togglefullscreen, mouseoverPropertyBox, clickInfoBox, clickPropertyBox};

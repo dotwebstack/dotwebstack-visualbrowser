@@ -1,6 +1,6 @@
 //import Diagram from './diagram.js'
 //import diagram from './diagram.js'
-import {initGraph, togglefullscreen} from './diagramglobal.js'
+import {initGraph, togglefullscreen, mouseoverPropertyBox, clickInfoBox, clickPropertyBox} from './diagramglobal.js'
 
 var jsonApiSubject = "http://mak.zorgeloosvastgoed.nl/id/begrip/Koop";
 var jsonApiIDSubject = "";
@@ -13,3 +13,5 @@ var fragments = {};
 //diagram.init(jsonApiSubject, jsonApiIDSubject, jsonApiCall, uriEndpoint, fragments);
 
 initGraph(jsonApiSubject, jsonApiIDSubject, jsonApiCall, uriEndpoint, fragments);
+
+export {togglefullscreen, mouseoverPropertyBox, clickInfoBox, clickPropertyBox};
