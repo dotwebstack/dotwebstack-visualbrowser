@@ -386,7 +386,7 @@ var node_drag = d3.behavior.drag()
 function updateTitle(d) {
 	var html = '<h3 class="panel-title"><a style="font-size:16px" href="'+uriEndpoint+encodeURIComponent(d['@id'])+'"><span class="glyphicon glyphicon-new-window"/></a> '+d.label;
 	if (!d.expanded) {
-		html+=' <a onclick="expand();" class="badge" style="font-size:12px">';
+		html+=' <a onclick="RDFViz.expand();" class="badge" style="font-size:12px">';
 		if (d.data['count']) {
 			html+=d.data['count']
 		};
@@ -799,4 +799,4 @@ function dblclick(d) {
 	}
 }
 
-export {initGraph, togglefullscreen, mouseoverPropertyBox, clickInfoBox, clickPropertyBox};
+export {initGraph, togglefullscreen, mouseoverPropertyBox, mouseoutPropertyBox, clickInfoBox, clickPropertyBox, expand};
