@@ -1,6 +1,6 @@
 //import Diagram from './diagram.js'
 //import diagram from './diagram.js'
-import {initGraph, togglefullscreen, mouseoverPropertyBox, mouseoutPropertyBox, clickInfoBox, clickPropertyBox, expand} from './diagramglobal.js'
+import {initGraph, togglefullscreen, mouseoverPropertyBox, mouseoutPropertyBox, clickInfoBox, clickPropertyBox, expand, hideNode} from './diagramglobal.js'
 
 var jsonApiSubject = "http://example.org/id/JaneDoe"; //URI of the subject that is the center of the graph
 var jsonApiIDSubject = ""; //Not used
@@ -14,4 +14,4 @@ var fragments = {};
 
 initGraph(jsonApiSubject, jsonApiIDSubject, jsonApiCall, uriEndpoint, fragments);
 
-export {togglefullscreen, mouseoverPropertyBox, mouseoutPropertyBox, clickInfoBox, clickPropertyBox, expand};
+export {togglefullscreen, mouseoverPropertyBox, mouseoutPropertyBox, clickInfoBox, clickPropertyBox, expand, hideNode};

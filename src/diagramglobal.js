@@ -436,12 +436,12 @@ function update() {
 
 	//Keep only the visible nodes
 	var nodes = root.nodes.filter(function(d) {
-		return d.aggregateNode ? (!d.expanded) && (d.count>0) : ((d.linkCount>1) || ((d.parentLink.source.outLinks[d.parentLink.uri].length < maxNodes) && (d.parentLink.target.inLinks[d.parentLink.uri].length < maxNodes)))
+		return d.aggregateNode ? (!d.expanded) && (d.count>0) : ((!d.hide) && ((d.linkCount>1) || ((d.parentLink.source.outLinks[d.parentLink.uri].length < maxNodes) && (d.parentLink.target.inLinks[d.parentLink.uri].length < maxNodes))))
 	});
 	var links = root.links;
 	//Keep only the visible links
 	links = root.links.filter(function(d) {
-		return d.source.aggregateNode ? (!d.source.expanded) && (d.source.count>0) : d.target.aggregateNode ? (!d.target.expanded) && (d.target.count>0) : (((d.source.linkCount>1) && (d.target.linkCount>1)) || ((d.source.outLinks[d.uri].length < maxNodes) && (d.target.inLinks[d.uri].length < maxNodes)))
+		return d.source.aggregateNode ? (!d.source.expanded) && (d.source.count>0) : d.target.aggregateNode ? (!d.target.expanded) && (d.target.count>0) : (!d.source.hide) && (!d.target.hide) && (((d.source.linkCount>1) && (d.target.linkCount>1)) || ((d.source.outLinks[d.uri].length < maxNodes) && (d.target.inLinks[d.uri].length < maxNodes)))
 	});
 
 	// Update the links
@@ -799,4 +799,13 @@ function dblclick(d) {
 	}
 }
 
-export {initGraph, togglefullscreen, mouseoverPropertyBox, mouseoutPropertyBox, clickInfoBox, clickPropertyBox, expand};
+function hideNode() {
+  if (currentNode) {
+    //Only hide if the node is a leaf-node
+    currentNode.hide = true;
+    mouseoutPropertyBox();
+    update()
+  }
+}
+
+export {initGraph, togglefullscreen, mouseoverPropertyBox, mouseoutPropertyBox, clickInfoBox, clickPropertyBox, expand, hideNode};

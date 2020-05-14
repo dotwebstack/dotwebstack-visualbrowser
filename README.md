@@ -32,3 +32,13 @@ Functionally some extra features are already identified:
 - "Dancing" of nodes should be configurable
 - Recollapse of items
 - Visualizing the whole graph, not only the centre subject
+
+## External dependencies:
+
+(should be part of npm dependency config, see roadmap)
+
+- D3 version 3: http://d3js.org/d3.v3.min.js
+- JQuery: https://code.jquery.com/jquery-3.1.1.min.js
+- Bootstrap: https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css
+- Bootstrap glyph icons: https://github.com/twbs/bootstrap/raw/master/fonts/glyphicons-halflings-regular.*
+- JSON-LD: https://cdn.jsdelivr.net/npm/jsonld@1.0.1/dist/jsonld.min.js
